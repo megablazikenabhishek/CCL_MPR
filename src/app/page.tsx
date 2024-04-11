@@ -3,6 +3,7 @@
 import { useState } from "react";
 import React from "react";
 import Link from "next/link";
+import axios from "axios";
 
 interface Todo {
   text: string;
@@ -37,9 +38,17 @@ const TodoForm = () => {
     setTodos([]);
   };
 
-  const handleSendEmail = () => {
+  const handleSendEmail = async() => {
     // Add your logic to send todos to email
-    console.log("Send todos to email:", todos);
+    try{
+      const data = await axios.post("/api/addDetails", {
+        to: email, tasks: todos
+      });
+      if(data.status === 201)
+        alert("Reminder saved......");
+    }catch(err){
+      console.log(err);
+    }
   };
 
   return (
@@ -245,7 +254,7 @@ const TodoForm = () => {
               className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"
               onClick={handleClearTodos}
             >
-              Add Reminder
+              Clear
             </button>
           </div>
         </div>
