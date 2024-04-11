@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import nodemailer from "nodemailer";
-import connection from "../utils/connect";
-import Tasks from "../utils/Tasks";
-import Template from "../utils/template";
+import connection from "../../../utils/connect";
+import Tasks from "../../../utils/Tasks";
+import Template from "../../../utils/template";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   try{
