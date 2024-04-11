@@ -1,7 +1,7 @@
 
 const template = (tasks: any) => {
     try {
-        let result = `
+        const result = `
             <!DOCTYPE html>
             <html lang="en">
             <head>
