@@ -1,15 +1,8 @@
 {
-   "version": 2,
-  "builds": [
-    {
-      "src": "index.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "crons": [
-    {
-      "path": "/send_mail",
-      "schedule":  "0 14 * * *"
-    }
-  ]
+    "crons": [
+        {
+            "path": "/api/cron",
+            "schedule":  "0 14 * * *"
+        }
+    ]
 }

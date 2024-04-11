@@ -1,4 +1,5 @@
-const template = (tasks) => {
+
+const template = (tasks: any) => {
     try {
         let result = `
             <!DOCTYPE html>
@@ -50,7 +51,7 @@ const template = (tasks) => {
     }
 }
 
-const format = (tasks) => {
+const format = (tasks: any) => {
     let result = ""
     for(let i=0; i<tasks.length ; i++){
         result += `<li> ${tasks[i]} </li>`
@@ -58,4 +59,4 @@ const format = (tasks) => {
     return result;
 }
 
-module.exports = template
+export default template;
